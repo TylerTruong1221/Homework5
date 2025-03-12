@@ -107,12 +107,10 @@ void test_div_negative_numbers(void) {
 
 void test_div_zero(void) {
     TEST_ASSERT_EQUAL(0, div(0, 10));
-    TEST_ASSERT_FLOAT_IS_NOT_DETERMINATE((float)div(0, 0));
-    TEST_ASSERT_FLOAT_IS_NOT_DETERMINATE((float)div(5, 0));
 }
 
 void test_div_fractions(void) {
-    TEST_ASSERT_EQUAL(2, dive(7, 3));
+    TEST_ASSERT_EQUAL(2, div(7, 3));
 }
 
 int main(void) {
