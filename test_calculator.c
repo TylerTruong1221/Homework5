@@ -93,6 +93,28 @@ void test_mult_underflow(void) {
     TEST_ASSERT_TRUE(result > 0);
 }
 
+void test_div_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(3, div(6, 2));
+}
+
+void test_div_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-2, div(4, -2));
+}
+
+void test_div_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(5, div(-5, -1));
+}
+
+void test_div_zero(void) {
+    TEST_ASSERT_EQUAL(0, div(0, 10));
+    TEST_ASSERT_FLOAT_IS_NOT_DETERMINATE((float)div(0, 0));
+    TEST_ASSERT_FLOAT_IS_NOT_DETERMINATE((float)div(5, 0));
+}
+
+void test_div_fractions(void) {
+    TEST_ASSERT_EQUAL(2, dive(7, 3));
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_add_positive_numbers);    //Run our test function
@@ -113,5 +135,10 @@ int main(void) {
     RUN_TEST(test_mult_zero);
     RUN_TEST(test_mult_overflow);
     RUN_TEST(test_mult_underflow);
+    RUN_TEST(test_div_positive_numbers);
+    RUN_TEST(test_div_positive_and_negative_numbers);
+    RUN_TEST(test_div_negative_numbers);
+    RUN_TEST(test_div_zero);
+    RUN_TEST(test_div_fractions);
     return UNITY_END();
 }
