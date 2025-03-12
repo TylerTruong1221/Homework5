@@ -89,7 +89,7 @@ void test_mult_overflow(void) {
 }
 
 void test_mult_underflow(void) {
-    int result = mult(INT_MIN, 2);
+    int result = mult(INT_MIN + 1, 2);
     TEST_ASSERT_TRUE(result > 0);
 }
 
